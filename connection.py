@@ -12,7 +12,7 @@ REDIS_DATABASE = os.getenv('REDIS_DATABASE')
 
 def redis_init():
     try:
-        pool = redis.ConnectionPool(host=REDIS_URL, port=REDIS_PORT)
+        pool = redis.ConnectionPool(host=REDIS_URL, port=REDIS_PORT, db=REDIS_DATABASE)
         conn = redis.Redis(connection_pool=pool)
     except ConnectionError:
         conn = None

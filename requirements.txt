@@ -1,2 +1,5 @@
 python-dotenv==0.20.0
-redis==4.3.4
+redis==4.0.0
+discord.py==1.7.3
+aiohttp==3.7.4
+async-timeout==3.0.0
