@@ -80,9 +80,9 @@ async def _get(ctx: interactions.CommandContext, key):
         )
     ]
 )
-async def _list(ctx: interactions.CommandContext, category=-1, limit=10):
-    if limit <= 30:
-        if 5 > category > -1:
+async def _list(ctx: interactions.CommandContext, category=-1, limit=5):
+    if limit <= 15:
+        if 6 > category > -1:
             await ctx.send("搜索引擎：正在努力載入相關數據 ...")
             category_name, response = s.search_article_by_category(category, limit)
             embed = e.general_embedded_frame("關於最新 " + str(limit) + " 的「" + category_name + "」貼文。", response)
@@ -94,7 +94,7 @@ async def _list(ctx: interactions.CommandContext, category=-1, limit=10):
                                              "使用 " + prefix + "list <類別> {數量} 列出文章")
             await ctx.send(embeds=embed)
     else:
-        await ctx.send("搜索引擎：由於文字顯示限制，最多可支持搜尋 30 篇文章！")
+        await ctx.send("搜索引擎：由於文字顯示限制，最多可支持搜尋 15 篇文章！")
 
 
 @bot.command(name="help", description="「靠北麥塊搜尋器」幫助頁面")
