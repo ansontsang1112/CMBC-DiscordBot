@@ -20,7 +20,7 @@ bot = interactions.Client(command_prefix=prefix, token=token)
 
 @bot.event
 async def on_ready():
-    print('「靠北麥塊搜尋器」啟動成功！')
+    print('\n\nHN | 「靠北麥塊搜尋器」啟動成功！')
     activity = interactions.PresenceActivity(name="使用 /help 尋找靠北文章", type=PresenceActivityType.LISTENING)
     await bot.change_presence(
         ClientPresence(
